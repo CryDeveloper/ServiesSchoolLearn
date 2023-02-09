@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfcbc6c6c7254179ba251fbca6255b3d" Name="Diagram1">
+        <EntityTypeShape EntityType="DemoExam_TaranModel.Client" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoExam_TaranModel.ClientService" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoExam_TaranModel.Gender" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoExam_TaranModel.Service" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="DemoExam_TaranModel.FK_Client_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoExam_TaranModel.FK_ClientService_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoExam_TaranModel.FK_ClientService_Service" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

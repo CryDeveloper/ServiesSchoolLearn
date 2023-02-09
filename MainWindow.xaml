@@ -1,0 +1,46 @@
+﻿<Window x:Class="ServiesSchoolLearn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiesSchoolLearn"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center"  >
+            <Image Source="Resources\school_logo.png" Height="30" Width="30" Style="{StaticResource MyImageStyle}"></Image>
+            <TextBlock Text="Заголовок" Style="{StaticResource MyFontStyle}" Margin="0,0,0,0"/>
+        </StackPanel>
+        <StackPanel  Grid.Row="1">
+            <ListBox x:Name="servicelist" SelectionChanged="dgTable_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <Image></Image>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding Title}"></TextBlock>
+                                <TextBlock Text="{Binding PriceAndTime}"></TextBlock>
+                                <TextBlock Text="{Binding DiscountIntext}"></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button></Button>
+                                    <Button></Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        
+        <!--<StackPanel Grid.Row ="1">
+            <DataGrid x:Name="dgTable" SelectionChanged="dgTable_SelectionChanged" />
+        </StackPanel>-->
+        
+    </Grid>
+</Window>
