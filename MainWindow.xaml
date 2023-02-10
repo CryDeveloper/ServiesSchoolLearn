@@ -9,27 +9,32 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="400*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center"  >
-            <Image Source="Resources\school_logo.png" Height="30" Width="30" Style="{StaticResource MyImageStyle}"></Image>
+            <Image Source="Resources\school_logo.png" Height="30" Width="30" Style="{StaticResource MyImageStyle}"/>
             <TextBlock Text="Заголовок" Style="{StaticResource MyFontStyle}" Margin="0,0,0,0"/>
         </StackPanel>
-        <StackPanel  Grid.Row="1">
-            <ListBox x:Name="servicelist" SelectionChanged="dgTable_SelectionChanged">
+        <StackPanel Grid.Row="1">
+            <TextBox x:Name="TextForCode" SelectionChanged="TextForCode_SelectionChanged"></TextBox>
+        </StackPanel>
+        <StackPanel  Grid.Row="2">
+            <ListBox x:Name="servicelist">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel>
-                                <Image></Image>
+                                <!--<Image Source="{Binding PathImage}"></Image>-->
+                                <Image Source="{Binding PathImage}" Height="100" Width="100" Style="{StaticResource MyImageStyle}"></Image>
                             </StackPanel>
                             <StackPanel Orientation="Vertical">
                                 <TextBlock Text="{Binding Title}"></TextBlock>
                                 <TextBlock Text="{Binding PriceAndTime}"></TextBlock>
                                 <TextBlock Text="{Binding DiscountIntext}"></TextBlock>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button></Button>
-                                    <Button></Button>
+                                    <Button Content="редактировать" Visibility="{Binding ForAdmin}" Click="EditButton_Click" Tag="{Binding ID}"></Button>
+                                    <Button Content="удалить" Visibility="{Binding ForAdmin}"></Button>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
@@ -37,10 +42,10 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
-        
+
         <!--<StackPanel Grid.Row ="1">
             <DataGrid x:Name="dgTable" SelectionChanged="dgTable_SelectionChanged" />
         </StackPanel>-->
-        
+
     </Grid>
 </Window>

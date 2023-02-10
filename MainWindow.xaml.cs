@@ -20,18 +20,25 @@ namespace ServiesSchoolLearn
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        DemoExam_TaranEntities demoExam_TaranEntities;
         public MainWindow()
         {
             InitializeComponent();
-            DemoExam_TaranEntities demoExam_TaranEntities = new DemoExam_TaranEntities();
+             demoExam_TaranEntities = new DemoExam_TaranEntities();
             //dgTable.ItemsSource = demoExam_TaranEntities.Service.ToList();
             servicelist.ItemsSource = demoExam_TaranEntities.Service.ToList();
         }
 
-        private void dgTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TextForCode_SelectionChanged(object sender, RoutedEventArgs e)
         {
+            AdminMode.forAdmin = TextForCode.Text == "0000" ? "visible" : "hidden";
+            servicelist.ItemsSource = demoExam_TaranEntities.Service.ToList();
+        }
 
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            MessageBox.Show(button.Tag.ToString());
         }
     }
 }
