@@ -33,7 +33,7 @@ namespace ServiesSchoolLearn
         {
             get
             {
-                return "Resources\\"+(MainImagePath.ToString()).Replace(" У", "У");
+                return "..\\Resources\\"+(MainImagePath.ToString()).Replace(" У", "У");
             }
         }
         public string ForAdmin

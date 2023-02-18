@@ -7,41 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="700*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>            
             <RowDefinition Height="400*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center"  >
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Width="140">
             <Image Source="Resources\school_logo.png" Height="30" Width="30" Style="{StaticResource MyImageStyle}"/>
             <TextBlock Text="Заголовок" Style="{StaticResource MyFontStyle}" Margin="0,0,0,0"/>
         </StackPanel>
-        <StackPanel Grid.Row="1">
-            <TextBox x:Name="TextForCode" SelectionChanged="TextForCode_SelectionChanged"></TextBox>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBox x:Name="TextForCode" SelectionChanged="TextForCode_SelectionChanged" HorizontalAlignment="Right" Width="100"></TextBox>
         </StackPanel>
-        <StackPanel  Grid.Row="2">
-            <ListBox x:Name="servicelist">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <StackPanel>
-                                <!--<Image Source="{Binding PathImage}"></Image>-->
-                                <Image Source="{Binding PathImage}" Height="100" Width="100" Style="{StaticResource MyImageStyle}"></Image>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Title}"></TextBlock>
-                                <TextBlock Text="{Binding PriceAndTime}"></TextBlock>
-                                <TextBlock Text="{Binding DiscountIntext}"></TextBlock>
-                                <StackPanel Orientation="Horizontal">
-                                    <Button Content="редактировать" Visibility="{Binding ForAdmin}" Click="EditButton_Click" Tag="{Binding ID}"></Button>
-                                    <Button Content="удалить" Visibility="{Binding ForAdmin}"></Button>
-                                </StackPanel>
-                            </StackPanel>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </StackPanel>
+
+        <Frame x:Name="Frame1" Grid.Row="1" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2" />
 
         <!--<StackPanel Grid.Row ="1">
             <DataGrid x:Name="dgTable" SelectionChanged="dgTable_SelectionChanged" />

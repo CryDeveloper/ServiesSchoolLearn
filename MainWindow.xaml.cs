@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ServiesSchoolLearn.Pages;
 
 namespace ServiesSchoolLearn
 {
@@ -20,19 +21,20 @@ namespace ServiesSchoolLearn
     /// </summary>
     public partial class MainWindow : Window
     {
-        DemoExam_TaranEntities demoExam_TaranEntities;
+        
         public MainWindow()
         {
             InitializeComponent();
-             demoExam_TaranEntities = new DemoExam_TaranEntities();
             //dgTable.ItemsSource = demoExam_TaranEntities.Service.ToList();
-            servicelist.ItemsSource = demoExam_TaranEntities.Service.ToList();
+            Frame1.Navigate(new ListService());
+            
         }
 
         private void TextForCode_SelectionChanged(object sender, RoutedEventArgs e)
         {
             AdminMode.forAdmin = TextForCode.Text == "0000" ? "visible" : "hidden";
-            servicelist.ItemsSource = demoExam_TaranEntities.Service.ToList();
+            Frame1.Navigate(new ListService());
+            //servicelist.ItemsSource = demoExam_TaranEntities.Service.ToList();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
