@@ -31,11 +31,14 @@
                         </StackPanel>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="{Binding Title}"></TextBlock>
-                            <TextBlock Text="{Binding PriceAndTime}"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Cost}"  TextDecorations ="Strikethrough"></TextBlock>
+                                <TextBlock Text="{Binding PriceAndTime}"></TextBlock>
+                            </StackPanel>
                             <TextBlock Text="{Binding DiscountIntext}"></TextBlock>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="редактировать" Visibility="{Binding ForAdmin}" Click="Button_Click" Tag="{Binding ID}"></Button>
-                                <Button Content="удалить" Visibility="{Binding ForAdmin}"></Button>
+                                <Button Content="редактировать" Visibility="{Binding ForAdmin}" Click="ButtonChange_Click" Tag="{Binding ID}"></Button>
+                                <Button Content="удалить" Visibility="{Binding ForAdmin}" Click="ButtonDelete_Click" Tag="{Binding ID}"></Button>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>

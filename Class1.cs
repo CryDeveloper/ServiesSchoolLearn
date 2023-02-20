@@ -14,7 +14,6 @@ namespace ServiesSchoolLearn
         public string PriceAndTime 
         { get
             {
-                //return Cost.ToString() + " рублей за " + (DurationInSeconds / 60).ToString() + " минут";
                 return ((double)Cost - (double)Cost *Discount).ToString() + " рублей за " + (DurationInSeconds / 60).ToString() + " минут";
             }
         }
@@ -38,7 +37,8 @@ namespace ServiesSchoolLearn
         }
         public string ForAdmin
         {
-            get {                
+            get 
+            {                
                 return AdminMode.forAdmin;               
             }
          }

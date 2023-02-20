@@ -32,7 +32,13 @@ namespace ServiesSchoolLearn.Pages
             servicelist.ItemsSource = services1;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonChange_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            MessageBox.Show(btn.Tag.ToString());
+        }
+
+        private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
             MessageBox.Show(btn.Tag.ToString());
